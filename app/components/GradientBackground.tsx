@@ -25,6 +25,7 @@ export default function GradientBackground({
           className="position-absolute w-100 h-100 top-0"
           style={{
             transform: `rotateZ(${i * rotationCoef}deg) scale(${scale})`,
+            zIndex: zIndex,
           }}
           key={i}
         >
@@ -32,7 +33,7 @@ export default function GradientBackground({
             <div className={`col-lg-${i * colCoef}`}></div>
             <div
               className="col-lg vh-100 text-body-primary text-white pt-5"
-              style={{ backgroundColor: color, opacity: 0.4 }}
+              style={{ backgroundColor: color, opacity: 0.4, zIndex: zIndex }}
             ></div>
           </div>
         </div>

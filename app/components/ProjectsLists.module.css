@@ -1,13 +1,13 @@
 .parent {
   display: grid;
   grid-template-areas: 
-  'P0 P0 P1 P1 P1'
-  'P0 P0 P1 P1 P1'
-  'P2 P2 P3 P3 P3';
+  'P0 P0 P1 P1 P1 P1'
+  'P0 P0 P1 P1 P1 P1'
+  'P2 P2 P2 P3 P3 P3';
   grid-auto-rows: 100px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 .parent > div {

@@ -1,4 +1,10 @@
-import { enigmathique, starace, Project } from "@/app/models/Projects";
+import {
+  enigmathique,
+  starace,
+  Project,
+  daengine,
+  carnetstage,
+} from "@/app/models/Projects";
 import GradientBackground from "./GradientBackground";
 import styles from "./ProjectsLists.module.css";
 import Link from "next/link";
@@ -13,10 +19,12 @@ function ProjectItem({
 }) {
   return (
     <div className="row w-100 h-100 shadow-lg">
-      <div className={`col-lg-${coverPerc} p-0`}>
+      <div className={`col-lg-${coverPerc} p-0 overflow-hidden`}>
         <BasePathImage
           src={project.cover}
           alt={project.name}
+          width={0}
+          height={0}
           className="object-fit-cover w-100 h-100"
         />
       </div>
@@ -36,13 +44,13 @@ function ProjectItem({
           />
         </div>
         <div className="d-flex flex-column justify-content-between h-100">
-          <div className="d-flex flex-column justify-content-between h-100">
+          <div className="h-100">
             <h3>{project.name}</h3>
             <p>{project.summary}</p>
           </div>
           <div className="d-flex justify-content-end">
             <Link
-              href={`/projects/${project.name.toLowerCase()}`}
+              href={`/projects/${project.id}`}
               className="btn btn-outline-light z-3"
               target="_blank"
               rel="noopener noreferrer"
@@ -71,10 +79,10 @@ export default function ProjectsList() {
         />
       </div>
       <div className="container mt-3 text-white" style={{ minHeight: "100vh" }}>
-        <h2>Mes projets</h2>
+        <h2 className="mb-2 text-center">Mes projets</h2>
         <div className={styles.parent}>
           <div>
-            <ProjectItem project={enigmathique} />
+            <ProjectItem project={daengine} coverPerc={4} />
           </div>
           <div>
             <ProjectItem project={enigmathique} />
@@ -83,7 +91,7 @@ export default function ProjectsList() {
             <ProjectItem project={starace} coverPerc={5} />
           </div>
           <div>
-            <ProjectItem project={enigmathique} />
+            <ProjectItem project={carnetstage} coverPerc={2} />
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@ export default function Hero() {
   return (
     <div
       className="vw-100 position-relative overflow-hidden"
-      style={{ height: "max(300px, calc(100vh - 56px))" }}
+      style={{ height: "max(300px, calc(100vh - 56px))", zIndex: -10 }}
     >
       <GradientBackground
         color="#255b52"

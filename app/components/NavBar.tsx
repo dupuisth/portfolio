@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function NavBar() {
   const links = [
     { href: "/", label: "Accueil" },
-    { href: "/about", label: "Projets" },
-    { href: "/contact", label: "Contact" },
+    { href: "/#projects", label: "Projets" },
+    { href: "/#contact", label: "Contact" },
   ];
 
   const navBarId = "navbarNavAltMarkup";

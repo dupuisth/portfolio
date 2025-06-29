@@ -10,6 +10,9 @@ export default (phase: string) => {
     sassOptions: {
       includePaths: ["./app/styles"],
     },
+    images: {
+      unoptimized: true
+    },
     reactStrictMode: true,
     assetPrefix: isDev ? undefined : "/portfolio/",
     basePath: isDev ? undefined : "/portfolio",
