@@ -31,7 +31,7 @@ function HeroArrow() {
       className="position-absolute start-50 translate-middle"
       style={{ zIndex: 2000, bottom: "45px" }}
     >
-      <a href="#projects" className="d-block position-relative">
+      <a href="#about" className="d-block position-relative">
         <div
           className="btn btn-link px-0 py-1 border-2 border-white animate-up-and-down"
           style={{ fontSize: "1.4rem" }}

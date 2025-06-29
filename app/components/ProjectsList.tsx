@@ -82,7 +82,7 @@ function ProjectItem({
           <div className="d-flex justify-content-end">
             <Link
               href={`/projects/${project.id}`}
-              className="btn btn-outline-light z-3"
+              className="btn btn-outline-light z-1"
               target="_blank"
               rel="noopener noreferrer"
             >
