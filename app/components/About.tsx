@@ -86,7 +86,7 @@ export default function About() {
         className="container mt-3 text-white pb-3"
         style={{ minHeight: "100vh" }}
       >
-        <h1 className="text-center">A propos de moi</h1>
+        <h2 className="text-center">A propos de moi</h2>
 
         <p>
           Salut, moi, c&apos;est <b>Thibaut</b>. Je suis actuellement étudiant
