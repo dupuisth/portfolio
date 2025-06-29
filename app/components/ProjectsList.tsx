@@ -106,7 +106,7 @@ export default function ProjectsList() {
           scale={1.2}
           colCoef={1}
           rotationCoef={1.3}
-          mirror={true}
+          mirror={false}
         />
       </div>
       <div className="container mt-3 text-white" style={{ minHeight: "100vh" }}>
