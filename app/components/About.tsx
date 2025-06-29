@@ -85,10 +85,10 @@ export default function About() {
         <h1 className="text-center">A propos de moi</h1>
 
         <p>
-          Salut, moi, c'est <b>Thibaut</b>. Je suis actuellement étudiant en{" "}
-          <b>BUT informatique</b> à l'IUT2 de Grenoble. Je suis interessé par la
-          programmation et les nouvelles technologies depuis que je suis au
-          lycée. Mon objectif actuel est de devenir{" "}
+          Salut, moi, c&apo;est <b>Thibaut</b>. Je suis actuellement étudiant en{" "}
+          <b>BUT informatique</b> à l&apo;IUT2 de Grenoble. Je suis interessé
+          par la programmation et les nouvelles technologies depuis que je suis
+          au lycée. Mon objectif actuel est de devenir{" "}
           <b>concepteur-développeur</b>.
         </p>
 
