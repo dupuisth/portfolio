@@ -4,11 +4,34 @@ import {
   Project,
   daengine,
   carnetstage,
+  ProjectOrigin,
 } from "@/app/models/Projects";
 import GradientBackground from "./GradientBackground";
 import styles from "./ProjectsLists.module.css";
 import Link from "next/link";
 import { BasePathImage } from "./BasePathImage";
+
+function ProjectOriginBadge({ origin }: { origin: ProjectOrigin }) {
+  switch (origin) {
+    case ProjectOrigin.ACADEMIC:
+      return (
+        <div className="bg-white p-1 rounded">
+          <BasePathImage
+            src="/images/logo-iut2.png"
+            alt="IUT2"
+            width={841 / 12}
+            height={341 / 12}
+          />
+        </div>
+      );
+    case ProjectOrigin.PERSONAL:
+      return <span className="badge bg-success">Personnel</span>;
+    case ProjectOrigin.WORK:
+      return <span className="badge bg-warning text-dark">Pro</span>;
+    default:
+      return null;
+  }
+}
 
 function ProjectItem({
   project,
@@ -33,20 +56,28 @@ function ProjectItem({
           12 - coverPerc
         } d-flex flex-column justify-content-between p-3 rounded-end position-relative`}
       >
-        <div className="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100 overflow-hidden"
+          style={{ zIndex: -100 }}
+        >
           <GradientBackground
             color="#111111ff"
             count={6}
-            zIndex={-10}
+            zIndex={-100}
             scale={1.2}
             colCoef={2}
             rotationCoef={7}
           />
         </div>
         <div className="d-flex flex-column justify-content-between h-100">
-          <div className="h-100">
-            <h3>{project.name}</h3>
-            <p>{project.summary}</p>
+          <div className="h-100 position-relative">
+            <div>
+              <h3>{project.name}</h3>
+              <p>{project.summary}</p>
+            </div>
+            <div className="position-absolute top-0 end-0">
+              <ProjectOriginBadge origin={project.origin} />
+            </div>
           </div>
           <div className="d-flex justify-content-end">
             <Link
