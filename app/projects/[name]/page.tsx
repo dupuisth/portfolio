@@ -29,7 +29,7 @@ function ProjectOriginWidget({ origin }: { origin: ProjectOrigin }) {
     case ProjectOrigin.PERSONAL:
       return <span className="badge bg-success">Personnel</span>;
     case ProjectOrigin.WORK:
-      return <span className="badge bg-warning text-dark">Pro</span>;
+      return <span className="badge bg-warning text-dark">Travail</span>;
     default:
       return null;
   }
@@ -48,7 +48,7 @@ export default async function Page({
   }
   return (
     <div>
-      <div className="container d-flex flex-column mt-5 z-1 bg-white shadow-lg rounded">
+      <div className="container d-flex flex-column mt-5 mb-3 pb-2 z-1 bg-white shadow-lg rounded">
         <div className="flex-grow">
           <div className="d-flex align-items-center">
             <h1 className="d-inline-block">{project.name}</h1>
