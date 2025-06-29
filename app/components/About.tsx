@@ -40,11 +40,11 @@ function ParcoursItem({
     <div className="accordion-item">
       <h2 className="accordion-header">
         <button
-          className="accordion-button"
+          className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={`#${accordionId}collapse${index}`}
-          aria-expanded="true"
+          aria-expanded="false"
           aria-controls={`${accordionId}collapse${index}`}
         >
           <div className="d-flex justify-content-between w-100 me-5">
@@ -55,7 +55,8 @@ function ParcoursItem({
       </h2>
       <div
         id={`${accordionId}collapse${index}`}
-        className="accordion-collapse collapse show"
+        className="accordion-collapse collapse"
+        style={{ backgroundColor: "#F0F0F0ff" }}
         data-bs-parent={`#${accordionId}`}
       >
         <div
@@ -81,7 +82,10 @@ export default function About() {
           mirror={true}
         />
       </div>
-      <div className="container mt-3 text-white" style={{ minHeight: "100vh" }}>
+      <div
+        className="container mt-3 text-white pb-3"
+        style={{ minHeight: "100vh" }}
+      >
         <h1 className="text-center">A propos de moi</h1>
 
         <p>
@@ -92,7 +96,7 @@ export default function About() {
           <b>concepteur-développeur</b>.
         </p>
 
-        <div className="mt-3">
+        <div className="mt-5">
           <h3>Mes compétences</h3>
 
           <div className="d-md-flex flex-nowrap gap-3 justify-content-center">
@@ -111,51 +115,53 @@ export default function About() {
           </div>
         </div>
 
-        <div className="mt-3">
-          <h3>Mon parcours universitaire</h3>
+        <div className="mt-5 row">
+          <div className="col-lg-6">
+            <h3>Mon parcours universitaire</h3>
 
-          <div className="accordion" id="univ">
-            <ParcoursItem
-              accordionId="univ"
-              title="Ecole d'ingénieur l'Esisar à Valence"
-              date="2025-2028"
-              description="Je vais continuer mes études au sein de l'<b>Esisar</b>, avec une alternance au sein de <b>Legrand</b>"
-              index={1}
-            />
-            <ParcoursItem
-              accordionId="univ"
-              title="BUT Informatique à l'IUT2 de Grenoble"
-              date="2022-2025"
-              description="Je suis actuellement en troisième année de <b>BUT Informatique</b> (en parcours réalisation d'application), que je réalise en alternance au sein du <b>Département de l'Isère</b>"
-              index={2}
-            />
-            <ParcoursItem
-              accordionId="univ"
-              title="Lycée la Saulaie"
-              date="2019-2022"
-              description="J'ai passé mon BAC Scientifique au Lycée la Saulaie, avec les spécialités <b>Mathématiques</b>, <b>Physique-Chimie</b> et avec l'option <b>Mathématiques expertes</b>. "
-              index={3}
-            />
+            <div className="accordion" id="univ">
+              <ParcoursItem
+                accordionId="univ"
+                title="Ecole d'ingénieur l'Esisar à Valence"
+                date="2025-2028"
+                description="Je vais continuer mes études au sein de l'<b>Esisar</b>, avec une alternance au sein de <b>Legrand</b>"
+                index={1}
+              />
+              <ParcoursItem
+                accordionId="univ"
+                title="BUT Informatique à l'IUT2 de Grenoble"
+                date="2022-2025"
+                description="Je suis actuellement en troisième année de <b>BUT Informatique</b> (en parcours réalisation d'application), que je réalise en alternance au sein du <b>Département de l'Isère</b>"
+                index={2}
+              />
+              <ParcoursItem
+                accordionId="univ"
+                title="Lycée la Saulaie"
+                date="2019-2022"
+                description="J'ai passé mon BAC Scientifique au Lycée la Saulaie, avec les spécialités <b>Mathématiques</b>, <b>Physique-Chimie</b> et avec l'option <b>Mathématiques expertes</b>. "
+                index={3}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="mt-3">
-          <h3>Mon parcours professionel</h3>
-          <div className="accordion" id="pro">
-            <ParcoursItem
-              accordionId="pro"
-              title="Alternance concepteur-développeur au Département de l'Isère"
-              date="2024-2025"
-              description="Le sujet principal de mon alternance concerne la <b>reprise d'un projet</b> de surcouche applicative. J'ai ainsi travaillé sur la <b>conception</b> et la <b>réalisation</b> de la solution, le tout en <b>intégrant</b> une équipe de développement <b>agile</b>."
-              index={1}
-            />
-            <ParcoursItem
-              accordionId="pro"
-              title="Stage au Département de l'Isère"
-              date="12 semaines en 2024"
-              description="J'ai réalisé de <b>A à Z</b> une <b>plateforme</b> permettant aux <b>agents</b> de donner leurs <b>avis</b> sur les <b>applications</b> interne."
-              index={2}
-            />
+          <div className="col-lg-6 mt-5 mt-lg-0">
+            <h3>Mon parcours professionel</h3>
+            <div className="accordion" id="pro">
+              <ParcoursItem
+                accordionId="pro"
+                title="Alternance concepteur-développeur au Département de l'Isère"
+                date="2024-2025"
+                description="Le sujet principal de mon alternance concerne la <b>reprise d'un projet</b> de surcouche applicative. J'ai ainsi travaillé sur la <b>conception</b> et la <b>réalisation</b> de la solution, le tout en <b>intégrant</b> une équipe de développement <b>agile</b>."
+                index={1}
+              />
+              <ParcoursItem
+                accordionId="pro"
+                title="Stage au Département de l'Isère"
+                date="12 semaines en 2024"
+                description="J'ai réalisé de <b>A à Z</b> une <b>plateforme</b> permettant aux <b>agents</b> de donner leurs <b>avis</b> sur les <b>applications</b> interne."
+                index={2}
+              />
+            </div>
           </div>
         </div>
       </div>
