@@ -1,3 +1,5 @@
+import styles from "./GradientBackground.module.css";
+
 export default function GradientBackground({
   color,
   count,
@@ -20,9 +22,14 @@ export default function GradientBackground({
       className="position-absolute w-100 h-100 overflow-hidden"
       style={{ zIndex: zIndex, transform: mirror ? "scaleX(-1)" : undefined }}
     >
+      <div
+        className={styles.fallbackItem}
+        style={{ backgroundColor: color }}
+      ></div>
+
       {[...Array(count)].map((x, i) => (
         <div
-          className="position-absolute w-100 h-100 top-0"
+          className={`${styles.item} position-absolute w-100 h-100 top-0`}
           style={{
             transform: `rotateZ(${i * rotationCoef}deg) scale(${scale})`,
             zIndex: zIndex,
